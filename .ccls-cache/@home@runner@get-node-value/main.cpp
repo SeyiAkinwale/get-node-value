@@ -14,17 +14,12 @@ class Node {
 };
 
 
-//iterative
+//recursive
 std::string getNodeValue(Node* head, int index) 
 {
-  Node * current = head;
-  int location=0;
-  while(current!=nullptr)
-  {
-    if(location==index) return current->val;
-    location++; current=current->next;
-  }
-  return "";
+  if(head==nullptr) return "";
+  else if (index=0) return head->value;
+  else returngetNodeValue(head->next, index-1);
 }
 
 int main() {
